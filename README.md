@@ -37,7 +37,7 @@ To get started with the project, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/dwelling-duo.git
+   git clone https://github.com/jayricka/dwelling-duo.git
    cd dwelling-duo
 2. **Setup a virtual Environment:**
 

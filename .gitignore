@@ -24,6 +24,10 @@ media/
 env/
 .venv/
 
+# Ignore the push directory
+push/
+.gitignore
+
 # Environment variables
 .env
 *.env

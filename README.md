@@ -44,14 +44,14 @@ To get started with the project, follow these steps:
 
 ### Set up a virtual environment:
 
-```bash
-python -m venv env
-source env/bin/activate  # On Windows use `env\Scripts\activate`
+    ```bash
+    python -m venv env
+    source env/bin/activate  # On Windows use `env\Scripts\activate`
 
 ### Install dependencies
 
-```bash
-pip install -r requirements.txt
+    ```bash
+    pip install -r requirements.txt
 
 ## Access the Application
 
@@ -77,5 +77,3 @@ Contributions are welcome! If you want to contribute to DwellingDuo, please foll
 ## Licensing
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-

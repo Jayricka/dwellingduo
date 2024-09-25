@@ -8,7 +8,6 @@
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [API Endpoints](#api-endpoints)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -65,16 +64,5 @@ Open your web browser and navigate to [http://127.0.0.1:8000/](http://127.0.0.1:
 - Use the search bar to filter properties based on your criteria (title, price range, location, availability).
 - Click on a property listing to view its details.
 - Admin users can manage property listings through the admin panel.
-
-## API Endpoints
-
-The application includes the following API endpoints:
-
-- `GET /properties/`: Fetch all properties with optional filtering and sorting parameters.
-- `POST /properties/`: Create a new property listing (requires authentication).
-- `GET /properties/<pk>/`: Retrieve details for a specific property.
-- `PUT /properties/<pk>/`: Update a specific property (requires authentication).
-- `DELETE /properties/<pk>/`: Delete a specific property (requires authentication).
-
 
 

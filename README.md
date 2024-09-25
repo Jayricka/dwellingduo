@@ -1,4 +1,4 @@
-# Dwelling Duo
+# Overview 
 
 **Dwelling Duo** is a web application developed using Django that allows users to list, search, and filter properties for sale or rent. The application features user authentication, property management, and dynamic search functionalities, enhancing the user experience.
 
@@ -53,7 +53,7 @@ To get started with the project, follow these steps:
     ```bash
     pip install -r requirements.txt
 
-## Access the Application
+### Access the Application
 
 Open your web browser and navigate to [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 

@@ -39,6 +39,21 @@ To get started with the project, follow these steps:
    ```bash
    git clone https://github.com/yourusername/dwelling-duo.git
    cd dwelling-duo
+2. **Setup a virtual Environment:**
+
+## Installation Steps
+
+### Set up a virtual environment:
+
+```bash
+python -m venv env
+source env/bin/activate  # On Windows use `env\Scripts\activate`
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+
 ## Access the Application
 
 Open your web browser and navigate to [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
@@ -60,3 +75,6 @@ The application includes the following API endpoints:
 - `GET /properties/<pk>/`: Retrieve details for a specific property.
 - `PUT /properties/<pk>/`: Update a specific property (requires authentication).
 - `DELETE /properties/<pk>/`: Delete a specific property (requires authentication).
+
+
+

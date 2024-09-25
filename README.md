@@ -27,7 +27,7 @@
 - HTML
 - CSS
 - JavaScript (with AJAX for dynamic functionality)
-- SQLite (or PostgreSQL, depending on configuration)
+- SQLite
 
 ## Installation
 

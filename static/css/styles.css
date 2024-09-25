@@ -1,0 +1,152 @@
+/* Universal styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    max-width: 1200px; /* Limit max width for larger screens */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between; /* Align items properly */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Ensure it takes the full width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for depth */
+}
+
+/* Title */
+.site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navigation styling */
+nav {
+    display: flex;
+    gap: 15px; /* Space between links */
+}
+
+nav a {
+    text-decoration: none;
+    color: white; /* White text for links */
+}
+
+/* Button styling */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    width: 100%; /* Ensure it takes the full width */
+}
+
+/* Form styles */
+form {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    width: 100%; /* Responsive form width */
+    max-width: 600px; /* Limit max width of form */
+    margin: 20px auto; /* Center form horizontally */
+}
+
+/* Input and select styles */
+input, select {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%; /* Full width */
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Light border */
+}
+
+/* Button styles in forms */
+form button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+/* Error messages */
+.error {
+    color: red;
+    margin-top: 5px;
+}
+
+/* Property list styling */
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+ul li {
+    background: #fff; /* White background for list items */
+    padding: 15px;
+    margin: 10px 0; /* Space between items */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Slight shadow */
+}
+
+/* Centering the search form */
+#search-form {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+    align-items: center; /* Center items */
+}
+
+/* Flexbox for input fields */
+#search-form input, 
+#search-form select {
+    width: 80%; /* Limit width */
+    margin: 10px 0; /* Spacing */
+}
+
+/* Dropdown styling */
+.filter-dropdown {
+    position: relative;
+    width: 80%;
+    display: none; /* Initially hidden */
+}
+
+/* Show dropdown options when focused */
+.filter-dropdown select {
+    display: block; /* Show when needed */
+    z-index: 10; /* Ensure it appears above other elements */
+}

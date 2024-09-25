@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="property-detail">
+    <h1>{{ property.title }}</h1>
+    <p><strong>Description:</strong> {{ property.description }}</p>
+    <p><strong>Price:</strong> ${{ property.price }}</p>
+    <p><strong>Location:</strong> {{ property.location }}</p>
+    <p><strong>Available:</strong> {{ property.available|yesno:"Yes,No" }}</p>
+
+    {% if property.image %}
+    <div>
+        <img src="{{ property.image.url }}" alt="{{ property.title }}" style="max-width: 300px;">
+    </div>
+    {% endif %}
+
+    {% if user.is_authenticated and user == property.owner %}
+    <div class="property-actions">
+        <a href="{% url 'properties:property_update' property.pk %}">Edit</a> |
+        <a href="{% url 'properties:property_delete' property.pk %}">Delete</a>
+    </div>
+    {% endif %}
+    
+    <a href="{% url 'properties:property_list' %}">Back to Property Listings</a>
+</div>
+{% endblock %}

@@ -65,4 +65,17 @@ Open your web browser and navigate to [http://127.0.0.1:8000/](http://127.0.0.1:
 - Click on a property listing to view its details.
 - Admin users can manage property listings through the admin panel.
 
+## Contributing
+
+Contributions are welcome! If you want to contribute to DwellingDuo, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-branch
+
+## Licensing
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
 

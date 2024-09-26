@@ -12,13 +12,12 @@
 - [License](#license)
 - [Contact](#contact)
 
-## Features
+## Features ✨
+- 🏠 **Property Listings**: Browse a variety of homes available for rent or sale.
+- 🔍 **Search**: Filter properties by price, location, and availability.
+- 🛠️ **Property Management**: Easily create, update, or delete listings.
+- 📱 **Responsive Design**: Optimized for both mobile and desktop users.
 
-- User authentication (registration, login, logout)
-- Create, update, and delete property listings
-- Search properties by title, price range, location, and availability
-- Dynamic filtering with AJAX for seamless user experience
-- Responsive design for mobile and desktop users
 
 ## Technologies Used
 

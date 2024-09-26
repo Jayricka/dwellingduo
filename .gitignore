@@ -1,3 +1,17 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Virtual environment
+env/
+venv/
+
+# Database files
+*.sqlite3
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Any other sensitive or unwanted files
 .env
 push
-db.sqlite3

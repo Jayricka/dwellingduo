@@ -2,6 +2,7 @@
 # Ignore compiled Python files and cache directories
 __pycache__/
 *.pyc
+*.pyo
 
 # Virtual Environment Directories
 # Ignore virtual environment folders

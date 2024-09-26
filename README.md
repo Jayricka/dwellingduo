@@ -75,6 +75,6 @@ Contributions are welcome! If you want to contribute to DwellingDuo, please foll
    ```bash
    git checkout -b feature-branch
 
-## Licensing
+## License 📜
 
 This project is licensed under the MIT License. See the LICENSE file for details.

@@ -79,6 +79,20 @@ body::before {
 header {
     position: relative; /* Ensure header is positioned above other content */
     z-index: 10; /* Higher z-index to stay on top of overlays */
+    background: linear-gradient(to bottom, rgba(40, 167, 69, 0.8), rgba(40, 167, 69, 0.6)), url('../images/header-background.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    padding: 20px; /* Add some padding */
+    color: white; /* Change text color for contrast */
+}
+
+footer {
+    background: linear-gradient(to top, rgba(40, 167, 69, 0.8), rgba(40, 167, 69, 0.6)), url('../images/footer-background.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    padding: 20px; /* Add some padding */
+    color: white; /* Change text color for contrast */
+    z-index: 20; /* Keep it above other content */
 }
 
 /* Features Section */
@@ -172,4 +186,35 @@ header {
 .property-actions {
     position: relative; /* Ensure action buttons are above the overlay */
     z-index: 10; /* Higher z-index to stay on top */
+}
+
+/* Confirmation Modal Styles */
+.confirmation-modal {
+    position: fixed; /* Keep it positioned relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    z-index: 100; /* High z-index to stay above all other content */
+    background: white; /* Ensure it's visible */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    padding: 20px; /* Padding around content */
+}
+
+/* Button Styles within Modal */
+.confirmation-modal .cta-button {
+    z-index: 101; /* Ensure buttons are above the modal */
+}
+
+/* Link Styles */
+a {
+    position: relative; /* Ensure link is positioned normally */
+    z-index: 10; /* Higher z-index to ensure it’s clickable */
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Bootstrap primary color */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+a:hover {
+    color: #0056b3; /* Darker color on hover */
 }

@@ -2,6 +2,7 @@
 
 **Dwelling Duo** is a web application developed using Django that allows users to list, search, and filter properties for sale or rent. The application features user authentication, property management, and dynamic search functionalities, enhancing the user experience.
 
+## Screenshot 📸
 ![Dwelling Duo Screenshot](assets/homepage-screenshot.png)
 
 ## Table of Contents
@@ -15,20 +16,19 @@
 - [Contact](#contact)
 
 ## Features ✨
-- 🏠 **Property Listings**: Browse a variety of homes available for rent or sale.
-- 🔍 **Search**: Filter properties by price, location, and availability.
-- 🛠️ **Property Management**: Easily create, update, or delete listings.
-- 📱 **Responsive Design**: Optimized for both mobile and desktop users.
 
+- 🔐 **User Authentication**: Registration, login, logout functionality
+- 🏡 **Property Management**: Create, update, and delete property listings
+- 🔍 **Search & Filter**: Search properties by title, price range, location, and availability
+- ⚡ **Dynamic Filtering**: AJAX-based search for a seamless experience
+- 📱 **Responsive Design**: Optimized for both mobile and desktop
 
-## Technologies Used
+## Technologies Used 🛠️
 
-- Python
-- Django
-- HTML
-- CSS
-- JavaScript (with AJAX for dynamic functionality)
-- SQLite
+- **Backend**: Python, Django
+- **Frontend**: HTML, CSS, JavaScript (AJAX for dynamic functionality)
+- **Database**: MySQL
+- **Environment**: SQLite (development)
 
 ## Installation
 

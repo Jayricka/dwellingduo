@@ -3,44 +3,47 @@
 {% block title %}Welcome to Dwelling Duo!{% endblock %}
 
 {% block content %}
-    <div class="hero-section">
+    <div class="hero-section background-image">
         <div class="overlay">
             <h2>Ready to Get Started?</h2>
             <p>Join us today and start your journey to finding the perfect home!</p>
-            <button onclick="window.location.href='{% url 'accounts:register' %}'">Sign Up Now</button>
+            <button class="cta-button" onclick="window.location.href='{% url 'accounts:register' %}'">Sign Up Now</button>
         </div>
     </div>
 
     <div class="container">
-        <h2>Search for Properties</h2>
-        <form method="GET" id="search-form" class="search-form" action="{% url 'properties:property_list' %}">
-            <input type="text" name="search" placeholder="Search..." value="{{ request.GET.search }}">
-            <button type="submit">Search</button>
-            <div class="filter-dropdown">
-                <select name="filter">
-                    <option value="title">Title</option>
-                    <option value="price">Price</option>
-                    <option value="location">Location</option>
-                    <option value="available">Availability</option>
-                </select>
-            </div>
-        </form>
-
         <h2>Why Choose Dwelling Duo?</h2>
-        <p>At Dwelling Duo, we connect tenants and landlords efficiently. Here’s why you should choose us:</p>
-        <ul>
-            <li>Comprehensive property listings</li>
-            <li>Easy communication between tenants and landlords</li>
-            <li>Transparent rental agreements</li>
-            <li>24/7 customer support</li>
-        </ul>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-home"></i>
+                <h3>Comprehensive Listings</h3>
+                <p>Find a wide range of properties that meet your needs.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-comments"></i>
+                <h3>Easy Communication</h3>
+                <p>Seamless interactions between tenants and landlords.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-file-contract"></i>
+                <h3>Transparent Agreements</h3>
+                <p>Clear and fair rental agreements for everyone.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>We're here for you, day and night.</p>
+            </div>
+        </div>
 
         <h2>What Our Users Say</h2>
-        <blockquote>
-            <p>"Dwelling Duo helped me find my dream apartment in no time!" - Jane Doe</p>
-        </blockquote>
-        <blockquote>
-            <p>"The platform is easy to use and very effective." - John Smith</p>
-        </blockquote>
+        <div class="testimonial-slider">
+            <blockquote>
+                <p>"Dwelling Duo helped me find my dream apartment in no time!" - Jane Doe</p>
+            </blockquote>
+            <blockquote>
+                <p>"The platform is easy to use and very effective." - John Smith</p>
+            </blockquote>
+        </div>
     </div>
 {% endblock %}

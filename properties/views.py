@@ -12,23 +12,33 @@ def home(request):
 def property_list(request):
     properties = Property.objects.all()
 
-    # Search functionality
+    # Filter functionality
     search_query = request.GET.get('search', '')
     min_price = request.GET.get('min_price')
     max_price = request.GET.get('max_price')
     location_query = request.GET.get('location', '')
+    title_query = request.GET.get('title', '')
 
-    if search_query:
-        properties = properties.filter(title__icontains=search_query)
-
-    if min_price:
-        properties = properties.filter(price__gte=min_price)
-
-    if max_price:
-        properties = properties.filter(price__lte=max_price)
+    if title_query:
+        properties = properties.filter(title__icontains=title_query)
 
     if location_query:
         properties = properties.filter(location__icontains=location_query)
+
+    if min_price and max_price:
+        properties = properties.filter(price__gte=min_price, price__lte=max_price)
+
+    # Sort functionality
+    sort_option = request.GET.get('sort', '')
+
+    if sort_option == 'price_asc':
+        properties = properties.order_by('price')
+    elif sort_option == 'price_desc':
+        properties = properties.order_by('-price')
+    elif sort_option == 'location_asc':
+        properties = properties.order_by('location')
+    elif sort_option == 'available':
+        properties = properties.order_by('available')
 
     # Check if the request is AJAX
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
@@ -50,6 +60,8 @@ def property_list(request):
         'min_price': min_price,
         'max_price': max_price,
         'location': location_query,
+        'title': title_query,
+        'sort_option': sort_option,
     })
 
 # Property detail

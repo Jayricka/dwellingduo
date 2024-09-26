@@ -58,15 +58,15 @@ To get started with the project, follow these steps:
 
 Open your web browser and navigate to [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
-## Usage
+## Usage 💻
 
-- Register a new account or log in to an existing account.
-- You can create a new property listing through the dashboard.
-- Use the search bar to filter properties based on your criteria (title, price range, location, availability).
-- Click on a property listing to view its details.
-- Admin users can manage property listings through the admin panel.
+- 📝 Register a new account or log in with an existing account.
+- 🏡 Create a new property listing via the dashboard.
+- 🔍 Use the search bar to filter properties by title, price range, location, and availability.
+- 📋 Click on a property listing to view its details.
+- Admin users can manage properties via the admin panel. (&#x1F469;&#x200D;&#x1F4BC;)
 
-## Contributing
+## Contributing 🤝
 
 Contributions are welcome! If you want to contribute to DwellingDuo, please follow these steps:
 

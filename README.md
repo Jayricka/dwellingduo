@@ -74,7 +74,7 @@ Open your web browser and navigate to [http://127.0.0.1:8000/](http://127.0.0.1:
 - 🏡 Create a new property listing via the dashboard.
 - 🔍 Use the search bar to filter properties by title, price range, location, and availability.
 - 📋 Click on a property listing to view its details.
-- Admin users can manage properties via the admin panel. (&#x1F469;&#x200D;&#x1F4BC;)
+- &#x1F469;&#x200D;&#x1F4BC; Admin users can manage properties via the admin panel.
 
 ## Contributing 🤝
 

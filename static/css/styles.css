@@ -18,7 +18,7 @@ h2 {
     position: relative;
     height: 60vh; /* Height of the hero section */
     background-image: url('../images/background-image.jpg'); /* Update this with your image path */
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     color: white;
     display: flex;

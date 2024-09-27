@@ -85,6 +85,17 @@ Contributions are welcome! If you want to contribute to DwellingDuo, please foll
    ```bash
    git checkout -b feature-branch
 
+## Related Projects 🔗
+
+Here are some open-source real estate platforms that might interest you:
+
+- [PropertyFindAR](https://github.com/saurabhbhatia/PropertyFindAR) - A real estate sample app built with Kotlin, featuring offline-first data handling, animations, and advanced Android architecture components like RxJava and Coroutines.
+- [DaftListings](https://github.com/AnthonyBloomer/daftlistings) - A Python library that allows programmatic interaction with Daft.ie, one of Ireland’s largest property platforms.
+- [Real Estate Laravel](https://github.com/liberu/real-estate-laravel) - A Laravel-based real estate management solution for property agencies with features for listing and sales management.
+- [Property Web Scraper](https://github.com/mrkamel/property_web_scraper) - A web-based scraper that makes it easy to collect real estate data from property websites using JavaScript.
+
+Explore these projects for inspiration and insights on building property listing platforms.
+
 ## License 📜
 
 This project is licensed under the MIT License. See the LICENSE file for details.

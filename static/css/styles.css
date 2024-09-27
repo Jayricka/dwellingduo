@@ -14,16 +14,12 @@ h2 {
 }
 
 /* Title Colors */
-.title-dwelling {
-    color: #333; /* 'Dwelling' color */
-}
-
-.title-duo {
-    color: #28a745; /* Updated 'Duo' color to a more visually appealing color */
+.title-dwellingduo {
+    color: #28a745; /* Updated color for 'DwellingDuo' */
     transition: color 0.3s; /* Smooth transition for hover effect */
 }
 
-.title-duo:hover {
+.title-dwellingduo:hover {
     color: #1c7430; /* Darker shade on hover */
 }
 

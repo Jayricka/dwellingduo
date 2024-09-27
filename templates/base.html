@@ -7,23 +7,23 @@
     <meta name="description" content="Dwelling Duo connects tenants and landlords for efficient property rentals.">
     <meta name="keywords" content="property, rental, tenants, landlords, apartments, housing">
     <meta name="author" content="Your Name">
-    <title>{% block title %}DwellingDuo{% endblock %}</title>
+    <title>{% block title %}Dwelling Duo{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
         <h1 class="site-title">
-            <a href="{% url 'home' %}">Dwelling Duo</a>
+            <a href="{% url 'home' %}" class="title-dwelling">Dwelling</a><span class="title-duo"> Duo</span>
         </h1>
         <nav>
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'properties:property_list' %}">View Properties</a>
+            <a href="{% url 'home' %}" class="menu-item">Home</a>
+            <a href="{% url 'properties:property_list' %}" class="menu-item">View Properties</a>
             {% if user.is_authenticated %}
-                <a href="{% url 'accounts:logout' %}">Logout</a>
+                <a href="{% url 'accounts:logout' %}" class="menu-item">Logout</a>
             {% else %}
-                <a href="{% url 'accounts:login' %}">Login</a>
-                <a href="{% url 'accounts:register' %}">Register</a>
+                <a href="{% url 'accounts:login' %}" class="menu-item">Login</a>
+                <a href="{% url 'accounts:register' %}" class="menu-item">Register</a>
             {% endif %}
         </nav>
     </header>

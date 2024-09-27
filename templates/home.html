@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Welcome to Dwelling Duo!{% endblock %}
+{% block title %}Welcome to DwellingDuo!{% endblock %}
 
 {% block content %}
     <div class="hero-section background-image">
@@ -8,11 +8,12 @@
             <h2 class="cta-title">Ready to Get Started?</h2>
             <p>Join us today and start your journey to finding the perfect home!</p>
             <button class="cta-button" onclick="window.location.href='{% url 'accounts:register' %}'">Sign Up Now</button>
+            <a href="{% url 'properties:about' %}" class="about-link">Learn More About Us</a> <!-- About Link -->
         </div>
     </div>
 
     <div class="container">
-        <h2>Why Choose Dwelling Duo?</h2>
+        <h2>Why Choose DwellingDuo?</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <i class="fas fa-home"></i>
@@ -39,7 +40,7 @@
         <h2>What Our Users Say</h2>
         <div class="testimonial-slider">
             <blockquote>
-                <p>"Dwelling Duo helped me find my dream apartment in no time!" - Jane Doe</p>
+                <p>"DwellingDuo helped me find my dream apartment in no time!" - Jane Doe</p>
             </blockquote>
             <blockquote>
                 <p>"The platform is easy to use and very effective." - John Smith</p>

@@ -19,6 +19,7 @@
         <nav>
             <a href="{% url 'home' %}" class="menu-item">Home</a>
             <a href="{% url 'properties:property_list' %}" class="menu-item">View Properties</a>
+            <a href="{% url 'about' %}" class="menu-item">About</a>
             {% if user.is_authenticated %}
                 <a href="{% url 'accounts:logout' %}" class="menu-item">Logout</a>
             {% else %}

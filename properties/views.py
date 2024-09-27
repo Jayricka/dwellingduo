@@ -4,6 +4,10 @@ from .forms import PropertyForm
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 
+#About view
+def about(request):
+    return render(request, 'about.html')
+
 # Home view
 def home(request):
     return render(request, 'home.html')

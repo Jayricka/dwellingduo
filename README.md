@@ -2,6 +2,16 @@
 
 **Dwelling Duo** is a web application developed using Django that allows users to list, search, and filter properties for sale or rent. The application features user authentication, property management, and dynamic search functionalities, enhancing the user experience.
 
+## Deployed Site 🌐
+Check out the live version of the application [here](https://youtu.be/TwY8yHKNfnI?si=rBD6gzaAPcplXktA).
+
+## Final Project Blog Article 📝
+You can read more about this project in my [final blog article](https://medium.com/@johnrika/my-journey-in-building-dwellingduo-a-property-listing-platform-2d8586abfbfc).
+
+## Author Links 🔗
+- [LinkedIn](https://www.linkedin.com/in/john-rika/)
+- [GitHub](https://github.com/jayricka)
+
 ## Screenshot 📸
 ![Dwelling Duo Screenshot](assets/homepage-screenshot.png)
 

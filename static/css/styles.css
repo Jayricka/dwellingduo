@@ -15,11 +15,16 @@ h2 {
 
 /* Title Colors */
 .title-dwelling {
-    color: black; /* 'Dwelling' color */
+    color: #333; /* 'Dwelling' color */
 }
 
 .title-duo {
-    color: green; /* 'Duo' color */
+    color: #28a745; /* Updated 'Duo' color to a more visually appealing color */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.title-duo:hover {
+    color: #1c7430; /* Darker shade on hover */
 }
 
 /* Hero Section */

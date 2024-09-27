@@ -105,10 +105,7 @@ header {
     z-index: 10; /* Higher z-index to stay on top of overlays */
     width: 100%; /* Ensure full width */
     height: 60px; /* Set height to match footer */
-    background: linear-gradient(to bottom, rgba(40, 167, 69, 0.8), rgba(40, 167, 69, 0.6)),
-                url('../images/header-background.jpg'); /* Replace with your image path */
-    background-size: cover; /* Ensures the background image covers the element */
-    background-position: center; /* Centers the image */
+    background-color: rgba(40, 167, 69, 0.8); /* Set a solid background color */
     padding: 20px; /* Adjust padding as needed */
     color: white; /* Change text color for contrast */
     text-align: center; /* Center text */
@@ -118,10 +115,7 @@ header {
 footer {
     width: 100%; /* Ensure full width */
     height: 60px; /* Match header height */
-    background: linear-gradient(to top, rgba(40, 167, 69, 0.8), rgba(40, 167, 69, 0.6)),
-                url('../images/footer-background.jpg'); /* Replace with your image path */
-    background-size: cover; /* Ensures the background image covers the element */
-    background-position: center; /* Centers the image */
+    background-color: rgba(40, 167, 69, 0.8); /* Set a solid background color */
     padding: 20px; /* Add some padding */
     color: white; /* Change text color for contrast */
     z-index: 20; /* Keep it above other content */

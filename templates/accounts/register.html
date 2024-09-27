@@ -48,4 +48,12 @@
     <button type="submit">Register</button>
 </form>
 <p><a href="{% url 'accounts:login' %}">Login</a></p>
+
+{% block footer %}
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </div>
+</footer>
+{% endblock %}
 {% endblock %}

@@ -1,161 +1,343 @@
-/* General Styling */
-html, body {
+/* General Styles */
+body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    position: relative;
+    background-color: #f4f4f4;
 }
 
-h2 {
-    text-align: center;
-    margin-top: 20px;
-    color: #007bff;
-}
-
-/* Title Colors */
-.title-dwellingduo {
-    color: #28a745; /* Updated color for 'DwellingDuo' */
-    transition: color 0.3s; /* Smooth transition for hover effect */
-}
-
-.title-dwellingduo:hover {
-    color: #1c7430; /* Darker shade on hover */
-}
-
-/* Hero Section */
-.hero-section {
-    position: relative;
-    height: 60vh; /* Height of the hero section */
-    background-image: url('../images/background-image.jpg'); /* Update this with your image path */
-    background-size: cover; /* Changed to cover for full width */
-    background-position: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 1; /* Ensure hero section is below form */
-}
-
-/* Overlay */
-.overlay {
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text contrast */
-    width: 100%;
+/* Header Styles */
+header {
+    background: #343a40; /* Dark background for header */
+    color: #ffffff;
     padding: 20px;
-    position: relative; /* Keep it relative */
+    text-align: center;
 }
 
-/* Menu Item Colors */
-.menu-item {
-    color: black; /* Home, View Properties, Login, Register color */
+h1 {
+    margin: 0;
+    font-size: 2.5em;
 }
 
-/* Form Styles */
-form {
-    position: relative; /* Ensure the form is positioned normally */
-    z-index: 20; /* Higher than the overlay */
-    padding: 20px; /* Add some padding */
-    background: white; /* Ensure form background is white */
+.navbar {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+
+.navbar a:hover {
+    background: #495057; /* Lighter shade on hover */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between items */
+    margin-top: 20px;
+    max-width: 1200px; /* Add a max width to the grid */
+    margin: 0 auto; /* Center the grid */
+}
+
+/* Property grid */
+.property-item {
+    border: 1px solid #dddddd; /* Light border */
     border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    overflow: hidden; /* Hide overflow */
+    transition: transform 0.3s; /* Animation effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    display: flex; /* Ensure flex display for contents */
+    flex-direction: column; /* Align content vertically */
+    justify-content: space-between; /* Distribute space */
+    padding: 10px; /* Add padding for aesthetics */
 }
 
-/* CTA Title Color */
-.cta-title {
-    color: orange; /* 'Ready to Get Started?' color */
+.property-item:hover {
+    transform: scale(1.05); /* Scale effect on hover */
 }
 
-/* CTA Button Styles */
-.cta-button {
-    background-color: #28a745; /* Primary color */
-    color: white;
-    padding: 10px 20px;
+.property-thumbnail {
+    width: 100%; /* Fill the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.property-item h3 {
+    font-size: 1.2em;
+    margin: 8px 0;
+    padding: 0 10px; /* Padding for text */
+}
+
+.property-item p {
+    margin: 0;
+    padding: 0 10px; /* Padding for text */
+}
+
+.btn-details {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    background: #007BFF; /* Primary button color */
+    color: #ffffff;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-details:hover {
+    background: #0056b3; /* Darker shade on hover */
+}
+
+/* Filter Form Styles */
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filter-input,
+.sort-select {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    width: calc(25% - 10px); /* Responsive width */
+}
+
+.btn-filter,
+.btn-add {
+    padding: 10px 15px;
+    background: #28a745; /* Success button color */
+    color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    position: relative; /* Added to help with stacking context */
-    z-index: 3; /* Ensure it's above the overlay */
+}
+
+.btn-filter:hover,
+.btn-add:hover {
+    background: #218838; /* Darker shade on hover */
+}
+
+/* Owner Actions */
+.owner-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* Cover Image Text Styles */
+.cover-image {
+    position: relative;
+    text-align: center;
+    color: white; /* Change text color for visibility */
+}
+
+.cover-image h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em; /* Adjust font size as needed */
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: add shadow for better visibility */
+}
+
+.cover-image p {
+    position: absolute;
+    top: 60%; /* Position below the title */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em; /* Adjust font size as needed */
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: add shadow for better visibility */
+}
+
+/* Link Styles */
+a {
+    color: #007bff; /* Base link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+a:hover {
+    color: #ff5733; /* Change color on hover */
+    transform: scale(1.1); /* Scale up effect on hover */
+}
+
+/* Cover Section Styles */
+.cover-section {
+    position: relative;
+    text-align: center;
+    color: white; /* Text color */
+    overflow: hidden; /* Hide overflow for overlay */
+}
+
+.cover-image {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.5s ease; /* Smooth scale effect */
+}
+
+.overlay {
+    position: absolute; /* Position text overlay */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust centering */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+    opacity: 0.9; /* Slight transparency for overlay */
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
+    padding: 20px; /* Add padding for aesthetics */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.overlay h1 {
+    font-size: 3.5em; /* Larger title */
+    margin: 0;
+    transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+.overlay p {
+    font-size: 1.5em; /* Description font size */
+    margin: 10px 0;
+    transition: opacity 0.3s ease; /* Smooth fade transition */
+}
+
+.cta-button {
+    display: inline-block; /* Button style */
+    padding: 10px 20px;
+    background: #ff5733; /* Bright button color */
+    color: white; /* Button text color */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.2em; /* Button font size */
+    margin-top: 15px; /* Spacing above button */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover Effects */
+.cover-image:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.overlay h1:hover {
+    transform: scale(1.1); /* Enlarge title on hover */
+}
+
+.overlay p:hover {
+    opacity: 0.8; /* Fade effect on hover */
 }
 
 .cta-button:hover {
-    background-color: #218838; /* Darker green on hover */
+    background: #c0392b; /* Darken button on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
 }
 
-/* Semi-Transparent Overlay */
-body::before {
-    content: "";
-    position: fixed; /* Cover the entire viewport */
-    top: 0;
+/* Modal Styles */
+.fullscreen-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
     left: 0;
-    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-image {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Footer Styles */
+footer {
+    background: #343a40; /* Dark background for footer */
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3); /* Semi-transparent backdrop */
-    z-index: 0; /* Below everything */
+    width: 100%;
 }
 
-/* Features Grid */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Space between grid items */
-    margin: 20px; /* Add margin to the grid */
-}
-
-/* Feature Card Styles */
-.feature-card {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-    background-color: #f0f0f0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Testimonial Slider */
-.testimonial-slider {
-    margin: 20px 0;
-    text-align: center;
-}
-
-.testimonial-slider blockquote {
-    margin: 10px 0;
-    transition: transform 0.3s ease;
-}
-
-.testimonial-slider blockquote:hover {
-    transform: scale(1.02);
-}
-
-/* About Section Styles */
-.about-section {
-    background: #fff; /* White background for the About section */
-    padding: 20px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    margin: 20px; /* Add margin for spacing */
-}
-
-/* Responsive Design */
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .features-grid {
-        grid-template-columns: 1fr; /* Stack features on smaller screens */
+    .filter-input,
+    .sort-select {
+        width: calc(50% - 10px); /* Adjust width for smaller screens */
     }
+    
+    .property-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust for smaller screens */
+    }
+}
 
-    .cta-button {
-        width: 100%; /* Full-width button on smaller screens */
-        font-size: 1.2em; /* Increase font size for better accessibility */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items */
     }
+    
+    .filter-input,
+    .sort-select {
+        width: 100%; /* Full width on mobile */
+    }
+}
 
-    header, footer {
-        height: auto; /* Allow footer and header to adjust height */
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
+.hero-section {
+    position: relative;
+    height: 60vh; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the section properly */
+    filter: brightness(0.7); /* Optional: darken the image for better text visibility */
+}
+
+.overlay {
+    position: absolute;
+    top: 50%; /* Center the overlay */
+    left: 50%; /* Center the overlay */
+    transform: translate(-50%, -50%); /* Adjust for exact center */
+    text-align: center;
+    color: white; /* Adjust text color for contrast */
+    padding: 20px; /* Optional: add padding for better spacing */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+.cta-title {
+    font-size: 2.5em; /* Make title larger for emphasis */
+    margin: 0.5em 0; /* Spacing around the title */
+}
+
+.cta-button {
+    padding: 10px 20px; /* Adjust button size */
+    font-size: 1em; /* Button font size */
+    border: none;
+    background-color: #ff5733; /* Customize button color */
+    color: white; /* Button text color */
+    cursor: pointer;
+    border-radius: 5px; /* Optional: round button corners */
+    transition: background-color 0.3s; /* Optional: smooth hover effect */
+}
+
+.cta-button:hover {
+    background-color: #e04e28; /* Darker shade on hover */
 }

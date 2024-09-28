@@ -7,15 +7,15 @@
 <h2>Property Listings</h2>
 
 <!-- Filter form -->
-<form method="GET" id="filter-form">
-    <input type="text" name="title" placeholder="Title" value="{{ title }}">
-    <input type="text" name="location" placeholder="Location" value="{{ location }}">
-    <input type="number" name="min_price" placeholder="Min Price" value="{{ min_price }}">
-    <input type="number" name="max_price" placeholder="Max Price" value="{{ max_price }}">
+<form method="GET" id="filter-form" class="filter-form">
+    <input type="text" name="title" placeholder="Title" value="{{ title }}" class="filter-input">
+    <input type="text" name="location" placeholder="Location" value="{{ location }}" class="filter-input">
+    <input type="number" name="min_price" placeholder="Min Price" value="{{ min_price }}" class="filter-input">
+    <input type="number" name="max_price" placeholder="Max Price" value="{{ max_price }}" class="filter-input">
 
-    <button type="submit">Filter</button>
+    <button type="submit" class="btn-filter">Filter</button>
 
-    <select name="sort" id="sort-select" onchange="document.getElementById('filter-form').submit();">
+    <select name="sort" id="sort-select" class="sort-select" onchange="document.getElementById('filter-form').submit();">
         <option value="">Sort By</option>
         <option value="price_asc" {% if sort_option == 'price_asc' %}selected{% endif %}>Price: Low to High</option>
         <option value="price_desc" {% if sort_option == 'price_desc' %}selected{% endif %}>Price: High to Low</option>
@@ -26,38 +26,44 @@
 
 <!-- Add Property Button below the search bar -->
 {% if user.is_authenticated %}
-    <form method="GET" action="{% url 'properties:property_create' %}" style="text-align: center; margin-top: 20px;">
-        <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-            Add Property
-        </button>
+    <form method="GET" action="{% url 'properties:property_create' %}" class="add-property-form">
+        <button type="submit" class="btn-add">Add Property</button>
     </form>
 {% endif %}
 
 <div class="property-grid">
     {% for property in properties %}
-        <div class="property-item">
+        <div class="property-item" data-image-url="{{ property.image.url }}">
             {% if property.image %}
-                <img src="{{ property.image.url }}" alt="{{ property.title }}" style="width: 100%; height: auto;">
+                <img src="{{ property.image.url }}" alt="{{ property.title }}" class="property-thumbnail">
             {% endif %}
             <h3>{{ property.title }}</h3>
             <p>Location: {{ property.location }}</p>
             <p>Price: ${{ property.price }}</p>
-            <p>Status: {{ property.available }}</p>
+            <p>Status: {{ property.available|yesno:"On Rent,Sale" }}</p>
 
-            <a href="{% url 'properties:property_detail' property.pk %}">View Details</a>
+            <a href="{% url 'properties:property_detail' property.pk %}" class="btn-details">View Details</a>
 
             <!-- Edit and Delete functionality for property owners -->
             {% if user.is_authenticated and property.owner == user %}
-                <a href="{% url 'properties:property_update' property.pk %}" style="color: blue;">Edit</a>
-                <form action="{% url 'properties:property_delete' property.pk %}" method="POST" style="display: inline;">
-                    {% csrf_token %}
-                    <button type="submit" style="color: red; background: none; border: none; cursor: pointer;">Delete</button>
-                </form>
+                <div class="owner-actions">
+                    <a href="{% url 'properties:property_update' property.pk %}" class="btn-edit">Edit</a>
+                    <form action="{% url 'properties:property_delete' property.pk %}" method="POST" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-delete">Delete</button>
+                    </form>
+                </div>
             {% endif %}
         </div>
     {% empty %}
         <p>No properties found.</p>
     {% endfor %}
+</div>
+
+<!-- Fullscreen Image Modal -->
+<div id="fullscreen-modal" class="fullscreen-modal">
+    <span class="close-modal">&times;</span>
+    <img class="fullscreen-image" id="fullscreen-image" src="" alt="">
 </div>
 
 {% endblock %}

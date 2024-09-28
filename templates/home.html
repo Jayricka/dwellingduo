@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Welcome to DwellingDuo!{% endblock %}
 
 {% block content %}
     <div class="hero-section background-image">
+        <img src="{% static 'images/your-cover-image.jpg' %}" alt="DwellingDuo Cover" class="hero-image">
         <div class="overlay">
             <h2 class="cta-title">Ready to Get Started?</h2>
             <p>Join us today and start your journey to finding the perfect home!</p>
             <button class="cta-button" onclick="window.location.href='{% url 'accounts:register' %}'">Sign Up Now</button>
-            <a href="{% url 'properties:about' %}" class="about-link">Learn More About Us</a> <!-- About Link -->
+            <a href="{% url 'properties:about' %}" class="about-link">Learn More About Us</a>
         </div>
     </div>
 

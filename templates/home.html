@@ -4,49 +4,37 @@
 {% block title %}Welcome to DwellingDuo!{% endblock %}
 
 {% block content %}
-    <div class="hero-section background-image">
-        <img src="{% static 'images/your-cover-image.jpg' %}" alt="DwellingDuo Cover" class="hero-image">
-        <div class="overlay">
-            <h2 class="cta-title">Ready to Get Started?</h2>
-            <p>Join us today and start your journey to finding the perfect home!</p>
-            <button class="cta-button" onclick="window.location.href='{% url 'accounts:register' %}'">Sign Up Now</button>
-            <a href="{% url 'properties:about' %}" class="about-link">Learn More About Us</a>
+<div class="cover-section">
+    <img src="{% static 'images/cover-image.jpg' %}" alt="Cover Image" class="hero-image">
+    <div class="overlay">
+        <h1>Welcome to DwellingDuo</h1>
+        <p>Your perfect property awaits</p>
+        <a href="#property-list" class="cta-button">Explore Listings</a>
+        <a href="{% url 'properties:about' %}" class="cta-button">About Us</a> <!-- New button -->
+    </div>
+</div>
+
+<!-- Key Features Section -->
+<section class="key-features">
+    <h2>Key Features</h2>
+    <div class="features-container">
+        <div class="feature-item">
+            <i class="fas fa-laptop-house feature-icon"></i> <!-- User-Friendly Interface Icon -->
+            <p>Navigate our platform easily to find your perfect property with just a few clicks.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-list-alt feature-icon"></i> <!-- Comprehensive Listings Icon -->
+            <p>Explore a wide range of properties with detailed descriptions, images, and pricing.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-lock feature-icon"></i> <!-- Secure Transactions Icon -->
+            <p>Enjoy a safe and secure process when renting or purchasing your next home.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-comments feature-icon"></i> <!-- New Feature Icon: Customer Support -->
+            <p>Receive 24/7 customer support for any inquiries or assistance you may need.</p>
         </div>
     </div>
+</section>
 
-    <div class="container">
-        <h2>Why Choose DwellingDuo?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fas fa-home"></i>
-                <h3>Comprehensive Listings</h3>
-                <p>Find a wide range of properties that meet your needs.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-comments"></i>
-                <h3>Easy Communication</h3>
-                <p>Seamless interactions between tenants and landlords.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-file-contract"></i>
-                <h3>Transparent Agreements</h3>
-                <p>Clear and fair rental agreements for everyone.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-headset"></i>
-                <h3>24/7 Support</h3>
-                <p>We're here for you, day and night.</p>
-            </div>
-        </div>
-
-        <h2>What Our Users Say</h2>
-        <div class="testimonial-slider">
-            <blockquote>
-                <p>"DwellingDuo helped me find my dream apartment in no time!" - Jane Doe</p>
-            </blockquote>
-            <blockquote>
-                <p>"The platform is easy to use and very effective." - John Smith</p>
-            </blockquote>
-        </div>
-    </div>
 {% endblock %}

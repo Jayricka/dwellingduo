@@ -137,46 +137,7 @@ main {
     padding: 10px;
 }
 
-/* Cover Image Text Styles */
-.cover-image {
-    position: relative;
-    text-align: center;
-    color: white; /* Change text color for visibility */
-}
-
-.cover-image h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3em; /* Adjust font size as needed */
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: add shadow for better visibility */
-}
-
-.cover-image p {
-    position: absolute;
-    top: 60%; /* Position below the title */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5em; /* Adjust font size as needed */
-    margin: 0;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: add shadow for better visibility */
-}
-
-/* Link Styles */
-a {
-    color: #007bff; /* Base link color */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
-}
-
-a:hover {
-    color: #ff5733; /* Change color on hover */
-    transform: scale(1.1); /* Scale up effect on hover */
-}
-
-/* Cover Section Styles */
+/* Hero Section Styles (Updated) */
 .cover-section {
     position: relative;
     text-align: center;
@@ -184,9 +145,11 @@ a:hover {
     overflow: hidden; /* Hide overflow for overlay */
 }
 
-.cover-image {
+.hero-image { /* Updated Class Name */
     width: 100%; /* Make image responsive */
     height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the entire container without distortion */
+    max-height: 600px; /* Limit the maximum height */
     transition: transform 0.5s ease; /* Smooth scale effect */
 }
 
@@ -226,118 +189,90 @@ a:hover {
     transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
 
-/* Hover Effects */
-.cover-image:hover {
-    transform: scale(1.05); /* Scale effect on hover */
-}
-
-.overlay h1:hover {
-    transform: scale(1.1); /* Enlarge title on hover */
-}
-
-.overlay p:hover {
-    opacity: 0.8; /* Fade effect on hover */
-}
-
 .cta-button:hover {
     background: #c0392b; /* Darken button on hover */
     transform: translateY(-3px); /* Lift effect on hover */
 }
 
-/* Modal Styles */
-.fullscreen-modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    justify-content: center;
-    align-items: center;
-}
-
-.fullscreen-image {
-    max-width: 90%;
-    max-height: 90%;
-}
-
-/* Footer Styles */
-footer {
-    background: #343a40; /* Dark background for footer */
-    color: #ffffff;
-    text-align: center;
+/* Key Features Section Styles */
+.key-features {
     padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    background-color: #ffffff; /* White background for the feature section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    margin-top: 20px;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .filter-input,
-    .sort-select {
-        width: calc(50% - 10px); /* Adjust width for smaller screens */
-    }
-    
-    .property-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        flex-direction: column; /* Stack navbar items */
-    }
-    
-    .filter-input,
-    .sort-select {
-        width: 100%; /* Full width on mobile */
-    }
-}
-
-.hero-section {
-    position: relative;
-    height: 60vh; /* Adjust the height as needed */
-    overflow: hidden;
-}
-
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the section properly */
-    filter: brightness(0.7); /* Optional: darken the image for better text visibility */
-}
-
-.overlay {
-    position: absolute;
-    top: 50%; /* Center the overlay */
-    left: 50%; /* Center the overlay */
-    transform: translate(-50%, -50%); /* Adjust for exact center */
+.key-features h2 {
     text-align: center;
-    color: white; /* Adjust text color for contrast */
-    padding: 20px; /* Optional: add padding for better spacing */
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
-    border-radius: 10px; /* Optional: rounded corners */
+    margin-bottom: 20px;
 }
 
-.cta-title {
-    font-size: 2.5em; /* Make title larger for emphasis */
-    margin: 0.5em 0; /* Spacing around the title */
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the feature items */
 }
 
-.cta-button {
-    padding: 10px 20px; /* Adjust button size */
-    font-size: 1em; /* Button font size */
-    border: none;
-    background-color: #ff5733; /* Customize button color */
-    color: white; /* Button text color */
-    cursor: pointer;
-    border-radius: 5px; /* Optional: round button corners */
-    transition: background-color 0.3s; /* Optional: smooth hover effect */
+.feature-item {
+    flex: 1 1 200px; /* Flex item with minimum width */
+    text-align: center; /* Center text */
+    padding: 10px;
+    margin: 10px; /* Space between items */
 }
 
-.cta-button:hover {
-    background-color: #e04e28; /* Darker shade on hover */
+.feature-icon {
+    font-size: 2em; /* Icon size */
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+/* Link Styles */
+a {
+    color: #007bff; /* Base link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+a:hover {
+    color: #ff5733; /* Change color on hover */
+    transform: scale(1.1); /* Scale up effect on hover */
+}
+.cover-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden; /* Ensure overflow is hidden */
+}
+
+.cover-image img {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the entire container */
+    max-height: 600px; /* Limit the maximum height */
+    transition: transform 0.5s ease; /* Smooth scale effect */
+}
+
+.cover-text {
+    position: absolute; /* Position text overlay */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust centering */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+    opacity: 0.9; /* Slight transparency for overlay */
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
+    padding: 20px; /* Add padding for aesthetics */
+    border-radius: 10px; /* Rounded corners */
+    z-index: 1; /* Ensure overlay is above the image */
+}
+
+.cover-text h1 {
+    font-size: 3.5em; /* Larger title */
+    margin: 0;
+    transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+.cover-text p {
+    font-size: 1.5em; /* Description font size */
+    margin: 10px 0;
+    transition: opacity 0.3s ease; /* Smooth fade transition */
 }

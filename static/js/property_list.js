@@ -5,47 +5,60 @@ document.addEventListener('DOMContentLoaded', () => {
     const propertyDetails = document.getElementById('property-details');
     const backToListing = document.getElementById('back-to-listing');
 
-    // Function to open the modal
+    // Function to open the modal with property details
     function openModal(propertyId) {
         fetch(`/properties/${propertyId}/`)
             .then(response => response.json())
             .then(data => {
-                // Populate the modal with property details
-                propertyDetails.innerHTML = `
-                    <img src="${data.image}" alt="${data.title}" style="width: 100%; height: auto;">
-                    <h2>${data.title}</h2>
-                    <p>Price: $${data.price}</p>
-                    <p>Location: ${data.location}</p>
-                    <p>Availability: ${data.available ? 'On Rent' : 'Sale'}</p>
-                    <p>${data.description}</p>
-                `;
-
-                // If the current user is the owner, show Edit and Delete buttons
-                if (data.is_owner) {
-                    const editButton = document.createElement('button');
-                    editButton.innerText = 'Edit';
-                    editButton.style = "margin-right: 10px;";
-                    editButton.addEventListener('click', function() {
-                        window.location.href = `/properties/${propertyId}/edit/`;
-                    });
-
-                    const deleteButton = document.createElement('button');
-                    deleteButton.innerText = 'Delete';
-                    deleteButton.style = "background-color: red; color: white;";
-                    deleteButton.addEventListener('click', function() {
-                        if (confirm('Are you sure you want to delete this property?')) {
-                            deleteProperty(propertyId);
-                        }
-                    });
-
-                    // Append Edit and Delete buttons to the modal content
-                    propertyDetails.appendChild(editButton);
-                    propertyDetails.appendChild(deleteButton);
-                }
-
-                modal.style.display = 'flex'; // Show the modal
+                populateModalWithData(data, propertyId);
+                modal.style.display = 'flex'; // Show modal
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => console.error('Error fetching property details:', error));
+    }
+
+    // Function to populate the modal with property data
+    function populateModalWithData(data, propertyId) {
+        propertyDetails.innerHTML = `
+            <img src="${data.image}" alt="${data.title}" style="width: 100%; height: auto;">
+            <h2>${data.title}</h2>
+            <p>Price: $${data.price}</p>
+            <p>Location: ${data.location}</p>
+            <p>Availability: ${data.available ? 'On Rent' : 'Sale'}</p>
+            <p>${data.description}</p>
+        `;
+
+        // Append edit and delete buttons if the user is the owner
+        if (data.is_owner) {
+            addOwnerControls(propertyId);
+        }
+    }
+
+    // Function to add edit and delete buttons for property owners
+    function addOwnerControls(propertyId) {
+        const editButton = createButton('Edit', () => {
+            window.location.href = `/properties/${propertyId}/edit/`;
+        });
+
+        const deleteButton = createButton('Delete', () => {
+            if (confirm('Are you sure you want to delete this property?')) {
+                deleteProperty(propertyId);
+            }
+        }, 'red', 'white');
+
+        // Append the buttons to the modal content
+        propertyDetails.appendChild(editButton);
+        propertyDetails.appendChild(deleteButton);
+    }
+
+    // Function to create a button element
+    function createButton(text, onClick, backgroundColor = '', color = '') {
+        const button = document.createElement('button');
+        button.innerText = text;
+        button.style.marginRight = '10px';
+        if (backgroundColor) button.style.backgroundColor = backgroundColor;
+        if (color) button.style.color = color;
+        button.addEventListener('click', onClick);
+        return button;
     }
 
     // Function to delete the property
@@ -53,19 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(`/properties/${propertyId}/delete/`, {
             method: 'POST',
             headers: {
-                'X-CSRFToken': getCookie('csrftoken') // Add CSRF token for security
+                'X-CSRFToken': getCookie('csrftoken') // CSRF token for security
             }
         })
         .then(response => {
             if (response.ok) {
                 alert('Property deleted successfully.');
-                modal.style.display = 'none'; // Close the modal after deletion
-                location.reload(); // Reload the property grid
+                modal.style.display = 'none'; // Close modal after deletion
+                location.reload(); // Reload the property list
             } else {
                 alert('Failed to delete the property.');
             }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error deleting property:', error));
     }
 
     // Add event listener to each property title to trigger modal
@@ -77,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Close modal functionality
+    // Close modal when close button is clicked
     closeModal.onclick = function() {
         modal.style.display = 'none';
     };
@@ -87,14 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'none';
     };
 
-    // Close the modal if clicked outside the content
+    // Close modal when clicking outside the content
     window.onclick = function(event) {
         if (event.target === modal) {
             modal.style.display = 'none';
         }
     };
 
-    // Function to get the CSRF token
+    // Function to get CSRF token
     function getCookie(name) {
         let cookieValue = null;
         if (document.cookie && document.cookie !== '') {

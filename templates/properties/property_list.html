@@ -33,9 +33,11 @@
 
 <div class="property-grid">
     {% for property in properties %}
-        <div class="property-item" data-image-url="{{ property.image.url }}">
+        <div class="property-item" data-image-url="{% if property.image %}{{ property.image.url }}{% else %}{% static 'default_image.png' %}{% endif %}">
             {% if property.image %}
                 <img src="{{ property.image.url }}" alt="{{ property.title }}" class="property-thumbnail">
+            {% else %}
+                <img src="{% static 'default_image.png' %}" alt="Default Image" class="property-thumbnail"> <!-- Use a default image -->
             {% endif %}
             <h3>{{ property.title }}</h3>
             <p>Location: {{ property.location }}</p>
@@ -48,7 +50,7 @@
             {% if user.is_authenticated and property.owner == user %}
                 <div class="owner-actions">
                     <a href="{% url 'properties:property_update' property.pk %}" class="btn-edit">Edit</a>
-                    <form action="{% url 'properties:property_delete' property.pk %}" method="POST" style="display: inline;">
+                    <form action="{% url 'properties:property_delete' property.pk %}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this property?');">
                         {% csrf_token %}
                         <button type="submit" class="btn-delete">Delete</button>
                     </form>

@@ -9,7 +9,7 @@ body {
 
 /* Header Styles */
 header {
-    background: #343a40; /* Dark background for header */
+    background: #343a40; /* Dark background */
     color: #ffffff;
     padding: 20px;
     text-align: center;
@@ -22,18 +22,26 @@ h1 {
 
 .navbar {
     display: flex;
-    justify-content: center;
-    margin-top: 10px;
+    justify-content: space-between; /* Space between left and right sections */
+    align-items: center;
+    padding: 10px 20px;
+    background: #343a40;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
 }
 
 .navbar a {
     color: #ffffff;
     text-decoration: none;
-    padding: 15px 20px;
+    padding: 10px 15px;
+    margin: 0 5px;
 }
 
 .navbar a:hover {
-    background: #495057; /* Lighter shade on hover */
+    background: #495057; /* Hover background color */
 }
 
 /* Main Content Styles */
@@ -237,6 +245,8 @@ a:hover {
     color: #ff5733; /* Change color on hover */
     transform: scale(1.1); /* Scale up effect on hover */
 }
+
+/* Cover Image Styles */
 .cover-image {
     position: relative;
     width: 100%;
@@ -275,4 +285,61 @@ a:hover {
     font-size: 1.5em; /* Description font size */
     margin: 10px 0;
     transition: opacity 0.3s ease; /* Smooth fade transition */
+}
+
+/* Footer Styles */
+footer {
+    background: #343a40; /* Dark background for footer */
+    color: #ffffff; /* White text */
+    text-align: center; /* Center text */
+    padding: 20px; /* Padding for footer */
+    position: relative; /* Position relative for absolute children */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center; /* Center footer links */
+    list-style-type: none; /* No bullets */
+    padding: 0; /* No padding */
+    margin: 10px 0; /* Margin around list */
+}
+
+.footer-links li {
+    margin: 0 10px; /* Space between items */
+}
+
+.footer-links a {
+    color: #ffffff; /* White text */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .filter-input,
+    .sort-select {
+        width: 100%; /* Full width on small screens */
+    }
+
+    .property-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Smaller items on mobile */
+    }
+
+    .overlay h1 {
+        font-size: 2.5em; /* Smaller title on mobile */
+    }
+
+    .overlay p {
+        font-size: 1em; /* Smaller description on mobile */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+    .navbar-left, .navbar-right {
+        flex-direction: column;
+        margin-top: 10px;
+    }
 }

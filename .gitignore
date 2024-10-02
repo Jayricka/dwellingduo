@@ -1,3 +1,4 @@
+.gitignore
 # Python Cache Files
 # Ignore compiled Python files and cache directories
 __pycache__/
@@ -35,11 +36,9 @@ db.sqlite3
 
 # Sensitive or Unwanted Files
 push
-
 # Ignore environment configuration files
 .env
 
 # Ignore other files that shouldn't be tracked
-.gitignore
 
 # Add any additional unwanted files or directories here

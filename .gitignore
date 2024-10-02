@@ -40,4 +40,6 @@ push
 .env
 
 # Ignore other files that shouldn't be tracked
+.gitignore
+
 # Add any additional unwanted files or directories here

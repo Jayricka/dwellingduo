@@ -17,7 +17,7 @@
             <div class="navbar-left">
                 <a href="{% url 'home' %}" class="menu-item">Home</a>
                 <a href="{% url 'properties:property_list' %}" class="menu-item">View Properties</a>
-                <a href="{% url 'properties:about' %}" class="menu-item">About</a>
+                <a href="{% url 'about' %}" class="menu-item">About</a>
             </div>
             <div class="navbar-right">
                 {% if user.is_authenticated %}

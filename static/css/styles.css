@@ -1,208 +1,261 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
-/* Cover Section Styles for Home and About Pages */
-.cover-image {
-    position: relative;
-    width: 100%;
-    height: 500px; /* Fixed height for cover section */
-    overflow: hidden; /* Prevent overflow */
-}
-
-.cover-image img {
-    width: 100%; /* Ensure the image takes up the full width of the container */
-    height: 100%; /* Make the image fill the entire height */
-    object-fit: contain; /* Ensure the image fits the container while maintaining aspect ratio */
-    display: block; /* Remove space below image */
-}
-
-/* Text Overlay on Image */
-.cover-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center the text */
-    color: white;
-    text-align: center;
+/* Header Styles */
+header {
+    background: #343a40; /* Dark background for header */
+    color: #ffffff;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
-    border-radius: 8px;
-    transition: opacity 0.3s ease;
+    text-align: center;
 }
 
-/* Hover Effect on Text Overlay */
-.cover-text:hover {
-    opacity: 0.8; /* Slightly fade the text overlay on hover */
+h1 {
+    margin: 0;
+    font-size: 2.5em;
 }
 
-/* Property Grid Layout */
+.navbar {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+
+.navbar a:hover {
+    background: #495057; /* Lighter shade on hover */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
 .property-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid layout */
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between items */
     margin-top: 20px;
+    max-width: 1200px; /* Add a max width to the grid */
+    margin: 0 auto; /* Center the grid */
 }
 
-.property-grid .property-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for property items */
-    transition: transform 0.3s ease;
+/* Property grid */
+.property-item {
+    border: 1px solid #dddddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    transition: transform 0.3s; /* Animation effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    display: flex; /* Ensure flex display for contents */
+    flex-direction: column; /* Align content vertically */
+    justify-content: space-between; /* Distribute space */
+    padding: 10px; /* Add padding for aesthetics */
 }
 
-.property-grid .property-item img {
-    width: 100%; /* Make the image take up the full width of the grid item */
-    height: auto; /* Maintain aspect ratio of the image */
-    object-fit: contain; /* Ensure image doesn't zoom, maintains original size */
-    transition: transform 0.5s ease;
+.property-item:hover {
+    transform: scale(1.05); /* Scale effect on hover */
 }
 
-/* Hover effect on property items */
-.property-grid .property-item:hover {
-    transform: scale(1.05); /* Slightly scale the property item */
+.property-thumbnail {
+    width: 100%; /* Fill the container */
+    height: auto; /* Maintain aspect ratio */
 }
 
-.property-grid .property-item:hover img {
-    transform: scale(1); /* No zoom effect on image */
-}
-
-/* Property Details (Name, Price, Location) */
-.property-item .property-info {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.6); /* Background for text visibility */
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.property-info h3 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-.property-info p {
-    margin: 5px 0;
+.property-item h3 {
     font-size: 1.2em;
+    margin: 8px 0;
+    padding: 0 10px; /* Padding for text */
 }
 
-/* Modal for Full Image and Description */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Background overlay */
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.property-item p {
+    margin: 0;
+    padding: 0 10px; /* Padding for text */
 }
 
-.modal-content {
-    position: relative;
-    max-width: 80%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
+.btn-details {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    background: #007BFF; /* Primary button color */
+    color: #ffffff;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
 }
 
-.modal img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* Prevent zoom on modal image */
+.btn-details:hover {
+    background: #0056b3; /* Darker shade on hover */
 }
 
-.modal h3,
-.modal p {
-    color: black;
+/* Filter Form Styles */
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-/* Close Button for Modal */
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: red;
-    color: white;
+.filter-input,
+.sort-select {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    width: calc(25% - 10px); /* Responsive width */
+}
+
+.btn-filter,
+.btn-add {
+    padding: 10px 15px;
+    background: #28a745; /* Success button color */
+    color: #ffffff;
     border: none;
-    font-size: 1.5em;
-    padding: 5px 10px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
-/* Additional Styling for About Section */
-.about-section {
-    text-align: center;
-    padding: 20px;
+.btn-filter:hover,
+.btn-add:hover {
+    background: #218838; /* Darker shade on hover */
 }
 
-.about-section a {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #ff5733;
-    text-decoration: none;
-}
-
-.about-section a:hover {
-    color: #e14d2a; /* Hover effect for links */
-}
-
-.about-section h2 {
-    font-size: 2em;
-    color: #333;
-}
-
-.about-section p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #555;
-}
-
-.about-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.about-section ul li {
-    margin: 20px 0;
-    font-size: 1.2em;
-    line-height: 1.6;
-}
-
-.about-section ul li a {
-    font-weight: bold;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.about-section ul li a:hover {
-    color: #0056b3; /* Hover effect for team member links */
-}
-
-/* Footer Styling */
-footer {
-    background-color: #f1f1f1;
+/* Owner Actions */
+.owner-actions {
+    display: flex;
+    justify-content: space-between;
     padding: 10px;
+}
+
+/* Cover Image Text Styles */
+.cover-image {
+    position: relative;
     text-align: center;
-    color: #555;
+    color: white; /* Change text color for visibility */
 }
 
-footer a {
-    color: #007bff;
-    text-decoration: none;
+.cover-image h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em; /* Adjust font size as needed */
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: add shadow for better visibility */
 }
 
-footer a:hover {
-    color: #0056b3;
+.cover-image p {
+    position: absolute;
+    top: 60%; /* Position below the title */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em; /* Adjust font size as needed */
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: add shadow for better visibility */
+}
+
+/* Key Features Section Styles */
+.key-features {
+    padding: 20px;
+    background-color: #ffffff; /* White background for the feature section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    margin-top: 20px;
+}
+
+.key-features h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the feature items */
+}
+
+.feature-item {
+    flex: 1 1 200px; /* Flex item with minimum width */
+    text-align: center; /* Center text */
+    padding: 10px;
+    margin: 10px; /* Space between items */
+}
+
+.feature-icon {
+    font-size: 2em; /* Icon size */
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+/* Link Styles */
+a {
+    color: #007bff; /* Base link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+a:hover {
+    color: #ff5733; /* Change color on hover */
+    transform: scale(1.1); /* Scale up effect on hover */
+}
+
+/* Cover Section Styles */
+.cover-section {
+    position: relative;
+    text-align: center;
+    color: white; /* Text color */
+    overflow: hidden; /* Hide overflow for overlay */
+}
+
+.cover-image {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.5s ease; /* Smooth scale effect */
+}
+
+.overlay {
+    position: absolute; /* Position text overlay */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust centering */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+    opacity: 0.9; /* Slight transparency for overlay */
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
+    padding: 20px; /* Add padding for aesthetics */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.overlay h1 {
+    font-size: 3.5em; /* Larger title */
+    margin: 0;
+    transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+.overlay p {
+    font-size: 1.5em; /* Adjust subtitle size */
+}
+
+/* Button Styles */
+.cta-button {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Block element */
+    margin: 10px 5px; /* Spacing between buttons */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
 }

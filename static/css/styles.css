@@ -1,0 +1,208 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cover Section Styles for Home and About Pages */
+.cover-image {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Fixed height for cover section */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.cover-image img {
+    width: 100%; /* Ensure the image takes up the full width of the container */
+    height: 100%; /* Make the image fill the entire height */
+    object-fit: contain; /* Ensure the image fits the container while maintaining aspect ratio */
+    display: block; /* Remove space below image */
+}
+
+/* Text Overlay on Image */
+.cover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover Effect on Text Overlay */
+.cover-text:hover {
+    opacity: 0.8; /* Slightly fade the text overlay on hover */
+}
+
+/* Property Grid Layout */
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid layout */
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.property-grid .property-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for property items */
+    transition: transform 0.3s ease;
+}
+
+.property-grid .property-item img {
+    width: 100%; /* Make the image take up the full width of the grid item */
+    height: auto; /* Maintain aspect ratio of the image */
+    object-fit: contain; /* Ensure image doesn't zoom, maintains original size */
+    transition: transform 0.5s ease;
+}
+
+/* Hover effect on property items */
+.property-grid .property-item:hover {
+    transform: scale(1.05); /* Slightly scale the property item */
+}
+
+.property-grid .property-item:hover img {
+    transform: scale(1); /* No zoom effect on image */
+}
+
+/* Property Details (Name, Price, Location) */
+.property-item .property-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6); /* Background for text visibility */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.property-info h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.property-info p {
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+
+/* Modal for Full Image and Description */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Background overlay */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 80%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.modal img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Prevent zoom on modal image */
+}
+
+.modal h3,
+.modal p {
+    color: black;
+}
+
+/* Close Button for Modal */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Additional Styling for About Section */
+.about-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.about-section a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ff5733;
+    text-decoration: none;
+}
+
+.about-section a:hover {
+    color: #e14d2a; /* Hover effect for links */
+}
+
+.about-section h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.about-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-section ul li {
+    margin: 20px 0;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.about-section ul li a {
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.about-section ul li a:hover {
+    color: #0056b3; /* Hover effect for team member links */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    color: #555;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #0056b3;
+}

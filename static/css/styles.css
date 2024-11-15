@@ -8,7 +8,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #007bff; /* Blue header */
+    background-color: #333; /* Blue header */
     color: white;
     padding: 20px;
     text-align: center;
@@ -19,17 +19,33 @@ header h1 {
     font-size: 2.5rem;
 }
 
-header nav a {
-    color: white;
-    text-decoration: none;
+header nav {
+    display: flex;
+    justify-content: space-between; /* Align left and right sections */
+    align-items: center;
+    background-color: #333;
     padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 1rem;
 }
 
-header nav a:hover {
-    background-color: #0056b3;
+.navbar-left,
+.navbar-right {
+    display: flex;
+    gap: 15px; /* Spacing between links */
+}
+
+.navbar-left a,
+.navbar-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 15px;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-left a:hover,
+.navbar-right a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* Footer Styles */
@@ -123,14 +139,16 @@ footer {
     color: #555;
 }
 
-/* Property Grid */
+/* Property Grid Using Flexbox */
 .property-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Flexible grid columns */
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of items within the container */
+    justify-content: space-between; /* Distributes cards with space between */
+    gap: 20px; /* Adds space between cards */
     padding: 20px;
     max-width: 1200px; /* Maximum width for the grid */
-    margin: 0 auto; /* Center the grid */
+    margin: 0 auto; /* Centers the grid */
+    box-sizing: border-box; /* Ensures padding doesn’t affect layout */
 }
 
 .property-card {
@@ -138,7 +156,10 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    position: relative;
+    flex-basis: calc(33.333% - 20px); /* Ensures three cards per row */
+    max-width: 350px; /* Max width for cards */
+    display: flex;
+    flex-direction: column; /* Makes sure the card items stack vertically */
     transition: transform 0.3s ease;
 }
 
@@ -148,13 +169,14 @@ footer {
 
 .property-card img {
     width: 100%;
-    height: 200px; /* Fixed height for property images */
+    height: 200px; /* Set height for property images */
     object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
 .property-card-content {
     padding: 20px;
     text-align: center;
+    flex: 1; /* Ensures content takes available space */
 }
 
 .property-card h3 {
@@ -189,6 +211,7 @@ footer {
     margin-top: 10px;
     display: inline-block;
     transition: background-color 0.3s ease;
+    align-self: center; /* Center the button */
 }
 
 .property-card .cta-button:hover {
@@ -241,11 +264,13 @@ footer {
     }
 
     .property-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust column sizes on small screens */
+        flex-direction: column; /* Stack the cards vertically on small screens */
+        align-items: center; /* Center cards */
     }
 
-    .property-card img {
-        height: 150px; /* Adjust image height for small screens */
+    .property-card {
+        flex-basis: 100%; /* Make cards take full width on small screens */
+        max-width: 90%; /* Allow for some padding on the sides */
     }
 
     .feature-item {
@@ -254,5 +279,9 @@ footer {
 
     .social-link {
         font-size: 1.1rem;
+    }
+
+    .property-card .cta-button {
+        font-size: 1rem; /* Adjust button font size */
     }
 }

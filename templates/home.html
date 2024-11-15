@@ -7,10 +7,12 @@
 <div class="cover-section">
     <img src="{% static 'images/cover-image.jpg' %}" alt="Cover Image" class="hero-image">
     <div class="overlay">
-        <h1>Welcome to DwellingDuo</h1>
-        <p>Your perfect property awaits</p>
-        <a href="{% url 'properties:property_list' %}" class="cta-button">Explore Listings</a>
-        <a href="{% url 'about' %}" class="cta-button">About Us</a> <!-- New button -->
+        <div class="overlay-container">
+            <h1>Welcome to DwellingDuo</h1>
+            <p>Your perfect property awaits</p>
+            <a href="{% url 'properties:property_list' %}" class="cta-button">Explore Listings</a>
+            <a href="{% url 'about' %}" class="cta-button">About Us</a> <!-- New button -->
+        </div>
     </div>
 </div>
 

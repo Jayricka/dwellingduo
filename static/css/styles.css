@@ -11,10 +11,12 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden; /* Prevents zooming issue */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
 }
 
 /* Overlay for better text visibility */
@@ -24,264 +26,264 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
-    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay */
+    z-index: 1; /* Overlay on top of background */
 }
 
 /* About Page Text Styling */
 .about-text {
-    position: relative;
+    position: relative; /* Allows positioning above the overlay */
     z-index: 2; /* Ensure text appears above overlay */
-    color: white;
-    text-align: center;
+    color: white; /* Sentence color */
+    text-align: center; /* Centers text */
     padding: 50px 20px;
+}
+
+/* Updated cover-section for image and text overlay behavior */
+.cover-section {
+    position: relative; /* Needed for absolute positioning of text */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    position: absolute; /* Places the image behind the text */
+    top: 0;
+    left: 0;
+    z-index: 0; /* Makes sure the image is behind the overlay */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly lighter dark overlay */
+    display: flex; /* Use flexbox to center text */
+    justify-content: center; /* Centers text horizontally */
+    align-items: center; /* Centers text vertically */
+    z-index: 1; /* Ensures overlay sits above image */
+}
+
+.overlay-container {
+    text-align: center;
+    color: white; /* White text for contrast */
+}
+
+.overlay-container h1 {
+    font-size: 3rem; /* Larger font size for heading */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.overlay-container p {
+    font-size: 1.5rem; /* Slightly larger paragraph text */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+.cta-button {
+    background-color: #ff5733; /* CTA button color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e84c29; /* Darker shade on hover */
 }
 
 /* Header Styles */
 header {
-    background-color: #333;
-    color: white;
+    background-color: #333; /* Header background color */
+    color: white; /* Header text color */
     padding: 20px;
-    text-align: center;
+    text-align: center; /* Centers header text */
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+    margin: 0; /* Removes default margin */
+    font-size: 2.5rem; /* Large header font */
 }
 
 /* Filter Form Styles */
 .filter-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex; /* Enables flexbox */
+    flex-wrap: wrap; /* Allows wrapping */
+    gap: 10px; /* Space between elements */
+    margin-bottom: 20px; /* Space below */
+    padding: 20px; /* Inner spacing */
+    background-color: #fff; /* Background color */
+    border-radius: 8px; /* Rounding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
 .filter-input {
-    flex: 1;
-    min-width: 120px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+    flex: 1; /* Flex-grow */
+    min-width: 120px; /* Minimum width */
+    padding: 10px; /* Inner spacing */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 4px; /* Rounding */
+    font-size: 14px; /* Font size */
 }
 
 .btn-filter {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
+    padding: 10px 20px; /* Inner spacing */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounding */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 14px; /* Font size */
+    transition: background-color 0.3s; /* Transition effect */
 }
 
 .btn-filter:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker on hover */
 }
 
 .sort-select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    background-color: white;
+    padding: 10px; /* Inner spacing */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 4px; /* Rounding */
+    font-size: 14px; /* Font size */
+    background-color: white; /* Background color */
 }
 
 /* Add Property Button Styles */
 .add-property-form {
-    margin-bottom: 20px;
-    text-align: right;
+    margin-bottom: 20px; /* Space below */
+    text-align: right; /* Aligns to the right */
 }
 
 .btn-add {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
+    padding: 10px 20px; /* Inner spacing */
+    background-color: #28a745; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounding */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 14px; /* Font size */
+    transition: background-color 0.3s; /* Transition effect */
 }
 
 .btn-add:hover {
-    background-color: #218838;
+    background-color: #218838; /* Darker on hover */
 }
 
 /* Property Grid Flexbox */
 .property-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex; /* Enables flexbox */
+    flex-wrap: wrap; /* Allows wrapping */
+    justify-content: space-between; /* Space between items */
+    gap: 20px; /* Space between items */
+    padding: 20px; /* Inner spacing */
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Centering */
 }
 
 .property-item {
-    flex: 1 1 calc(33.33% - 20px);
-    box-sizing: border-box;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    margin-bottom: 20px;
-    cursor: pointer;
+    flex: 1 1 calc(33.33% - 20px); /* Flexible basis */
+    box-sizing: border-box; /* Box sizing */
+    background-color: white; /* Item background */
+    border-radius: 8px; /* Rounding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    overflow: hidden; /* Cuts off overflow */
+    transition: transform 0.3s ease-in-out; /* Transition effect */
+    margin-bottom: 20px; /* Margin below */
+    cursor: pointer; /* Pointer on hover */
 }
 
 .property-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Lift effect on hover */
 }
 
 .property-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    width: 100%; /* Full width */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
 }
 
 .property-item h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 10px;
+    font-size: 1.5rem; /* Font size */
+    color: #333; /* Text color */
+    margin: 10px; /* Margin */
 }
 
 .property-item p {
-    font-size: 1rem;
-    color: #777;
-    margin: 0 10px 10px 10px;
+    font-size: 1rem; /* Font size */
+    color: #777; /* Text color */
+    margin: 0 10px 10px 10px; /* Margin */
 }
 
 /* Modal Styles */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    z-index: 1000; /* Above other content */
+    left: 0; /* Left alignment */
+    top: 0; /* Top alignment */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Scrolls if content overflows */
+    background-color: rgba(0, 0, 0, 0.5); /* Modal background */
+    padding: 60px 20px; /* Padding for content */
 }
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
+/* Key Features Section - Keeping original as it is */
+.key-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.feature-item {
+    flex: 1 1 calc(33.33% - 20px);
+    background-color: #fff;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
     border-radius: 8px;
-    position: relative;
-}
-
-.close {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-}
-
-.modal-image {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-/* Button Styles */
-.btn-details, .btn-edit, .btn-delete {
-    display: inline-block;
-    padding: 8px 16px;
-    margin: 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.btn-details {
-    background-color: #007bff;
-    color: white;
-}
-
-.btn-details:hover {
-    background-color: #0056b3;
-}
-
-.btn-edit {
-    background-color: #ffc107;
-    color: #000;
-}
-
-.btn-edit:hover {
-    background-color: #e0a800;
-}
-
-.btn-delete {
-    background-color: #dc3545;
-    color: white;
-}
-
-.btn-delete:hover {
-    background-color: #c82333;
-}
-
-/* Owner Actions Styles */
-.owner-actions {
-    margin-top: 10px;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .property-grid {
-        flex-direction: column;
-        align-items: center;
-    }
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
 
-    .property-item {
-        flex-basis: 100%;
-    }
+.feature-item p {
+    font-size: 1rem;
+    color: #666;
+}
 
-    .filter-form {
-        flex-direction: column;
-    }
+.feature-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
 
-    .filter-input, .sort-select, .btn-filter {
-        width: 100%;
-    }
-
-    .modal-content {
-        width: 95%;
-        margin: 10% auto;
-    }
+/* Property Modal Styling */
+.property-modal {
+    display: block; /* By default visible */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the modal */
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 90%; /* Width limit */
+    max-height: 80%; /* Height limit */
+    overflow-y: auto; /* Scroll if content overflows */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1001; /* Above other content */
 }

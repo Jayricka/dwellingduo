@@ -5,7 +5,20 @@
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}  <!-- This automatically renders all the form fields, including the 'available' field -->
+    {{ form.as_p }}
+
+    <!-- Explicitly render the available field radio buttons -->
+    <p><strong>Availability:</strong></p>
+    <div>
+        <label for="id_available_0">
+            <input type="radio" name="available" value="on_rent" id="id_available_0" {% if form.available.value == 'on_rent' %}checked{% endif %}> On Rent
+        </label>
+    </div>
+    <div>
+        <label for="id_available_1">
+            <input type="radio" name="available" value="for_sale" id="id_available_1" {% if form.available.value == 'for_sale' %}checked{% endif %}> For Sale
+        </label>
+    </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

@@ -3,57 +3,35 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-/* Homepage and About Page Background */
+/* Variables */
+:root {
+    --primary-color: #ff5733;
+    --secondary-color: #007bff;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --light-text-color: #777;
+    --overlay-color: rgba(0, 0, 0, 0.6);
+    --hover-color: #e84c29;
+    --button-hover-color: #0056b3;
+    --cta-bg-color: #28a745;
+    --cta-hover-color: #218838;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Background with Overlay */
 .page-background {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-size: cover; /* Ensures the image covers the entire container */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    display: flex; /* Enables flexbox */
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-}
-
-/* Overlay for better text visibility */
-.page-background .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay */
-    z-index: 1; /* Overlay on top of background */
-}
-
-/* About Page Text Styling */
-.about-text {
-    position: relative; /* Allows positioning above the overlay */
-    z-index: 2; /* Ensure text appears above overlay */
-    color: white; /* Sentence color */
-    text-align: center; /* Centers text */
-    padding: 50px 20px;
-}
-
-/* Updated cover-section for image and text overlay behavior */
-.cover-section {
-    position: relative; /* Needed for absolute positioning of text */
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-}
-
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the area without stretching */
-    position: absolute; /* Places the image behind the text */
-    top: 0;
-    left: 0;
-    z-index: 0; /* Makes sure the image is behind the overlay */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .overlay {
@@ -62,180 +40,161 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Slightly lighter dark overlay */
-    display: flex; /* Use flexbox to center text */
-    justify-content: center; /* Centers text horizontally */
-    align-items: center; /* Centers text vertically */
-    z-index: 1; /* Ensures overlay sits above image */
+    background-color: var(--overlay-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
 
 .overlay-container {
     text-align: center;
-    color: white; /* White text for contrast */
+    color: white;
+    z-index: 2;
 }
 
 .overlay-container h1 {
-    font-size: 3rem; /* Larger font size for heading */
-    margin-bottom: 10px; /* Space below the heading */
+    font-size: 3rem;
+    margin-bottom: 15px;
 }
 
 .overlay-container p {
-    font-size: 1.5rem; /* Slightly larger paragraph text */
-    margin-bottom: 20px; /* Space below the paragraph */
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
 .cta-button {
-    background-color: #ff5733; /* CTA button color */
+    background-color: var(--primary-color);
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    font-size: 1rem;
     transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #e84c29; /* Darker shade on hover */
+    background-color: var(--hover-color);
 }
 
 /* Header Styles */
 header {
-    background-color: #333; /* Header background color */
-    color: white; /* Header text color */
+    background-color: #333;
+    color: white;
     padding: 20px;
-    text-align: center; /* Centers header text */
+    text-align: center;
 }
 
 header h1 {
-    margin: 0; /* Removes default margin */
-    font-size: 2.5rem; /* Large header font */
+    font-size: 2.5rem;
+    margin: 0;
 }
 
-/* Filter Form Styles */
+/* Filter Form */
 .filter-form {
-    display: flex; /* Enables flexbox */
-    flex-wrap: wrap; /* Allows wrapping */
-    gap: 10px; /* Space between elements */
-    margin-bottom: 20px; /* Space below */
-    padding: 20px; /* Inner spacing */
-    background-color: #fff; /* Background color */
-    border-radius: 8px; /* Rounding */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
 }
 
-.filter-input {
-    flex: 1; /* Flex-grow */
-    min-width: 120px; /* Minimum width */
-    padding: 10px; /* Inner spacing */
-    border: 1px solid #ddd; /* Border color */
-    border-radius: 4px; /* Rounding */
-    font-size: 14px; /* Font size */
+.filter-input, .sort-select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .btn-filter {
-    padding: 10px 20px; /* Inner spacing */
-    background-color: #007bff; /* Button color */
-    color: white; /* Text color */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounding */
-    cursor: pointer; /* Pointer on hover */
-    font-size: 14px; /* Font size */
-    transition: background-color 0.3s; /* Transition effect */
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .btn-filter:hover {
-    background-color: #0056b3; /* Darker on hover */
+    background-color: var(--button-hover-color);
 }
 
-.sort-select {
-    padding: 10px; /* Inner spacing */
-    border: 1px solid #ddd; /* Border color */
-    border-radius: 4px; /* Rounding */
-    font-size: 14px; /* Font size */
-    background-color: white; /* Background color */
-}
-
-/* Add Property Button Styles */
-.add-property-form {
-    margin-bottom: 20px; /* Space below */
-    text-align: right; /* Aligns to the right */
-}
-
-.btn-add {
-    padding: 10px 20px; /* Inner spacing */
-    background-color: #28a745; /* Button color */
-    color: white; /* Text color */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounding */
-    cursor: pointer; /* Pointer on hover */
-    font-size: 14px; /* Font size */
-    transition: background-color 0.3s; /* Transition effect */
-}
-
-.btn-add:hover {
-    background-color: #218838; /* Darker on hover */
-}
-
-/* Property Grid Flexbox */
+/* Property Grid using CSS Grid */
 .property-grid {
-    display: flex; /* Enables flexbox */
-    flex-wrap: wrap; /* Allows wrapping */
-    justify-content: space-between; /* Space between items */
-    gap: 20px; /* Space between items */
-    padding: 20px; /* Inner spacing */
-    max-width: 1200px; /* Maximum width */
-    margin: 0 auto; /* Centering */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .property-item {
-    flex: 1 1 calc(33.33% - 20px); /* Flexible basis */
-    box-sizing: border-box; /* Box sizing */
-    background-color: white; /* Item background */
-    border-radius: 8px; /* Rounding */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    overflow: hidden; /* Cuts off overflow */
-    transition: transform 0.3s ease-in-out; /* Transition effect */
-    margin-bottom: 20px; /* Margin below */
-    cursor: pointer; /* Pointer on hover */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .property-item:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-5px);
 }
 
 .property-item img {
-    width: 100%; /* Full width */
-    height: 200px; /* Fixed height */
-    object-fit: cover; /* Maintain aspect ratio */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .property-item h3 {
-    font-size: 1.5rem; /* Font size */
-    color: #333; /* Text color */
-    margin: 10px; /* Margin */
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 10px;
 }
 
 .property-item p {
-    font-size: 1rem; /* Font size */
-    color: #777; /* Text color */
-    margin: 0 10px 10px 10px; /* Margin */
+    font-size: 1rem;
+    color: var(--light-text-color);
+    margin: 0 10px 10px 10px;
 }
 
-/* Modal Styles */
+/* Add Property Button */
+.btn-add {
+    background-color: var(--cta-bg-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-add:hover {
+    background-color: var(--cta-hover-color);
+}
+
+/* Modal */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed position */
-    z-index: 1000; /* Above other content */
-    left: 0; /* Left alignment */
-    top: 0; /* Top alignment */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Scrolls if content overflows */
-    background-color: rgba(0, 0, 0, 0.5); /* Modal background */
-    padding: 60px 20px; /* Padding for content */
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 90%;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Key Features Section - Keeping original as it is */
+/* Key Features */
 .key-features {
     display: flex;
     flex-wrap: wrap;
@@ -246,44 +205,9 @@ header h1 {
 }
 
 .feature-item {
-    flex: 1 1 calc(33.33% - 20px);
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
     text-align: center;
-}
-
-.feature-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.feature-item p {
-    font-size: 1rem;
-    color: #666;
-}
-
-.feature-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-/* Property Modal Styling */
-.property-modal {
-    display: block; /* By default visible */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centers the modal */
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    max-width: 90%; /* Width limit */
-    max-height: 80%; /* Height limit */
-    overflow-y: auto; /* Scroll if content overflows */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    z-index: 1001; /* Above other content */
 }

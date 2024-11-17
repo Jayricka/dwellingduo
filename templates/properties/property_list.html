@@ -31,13 +31,14 @@
     </form>
 {% endif %}
 
-<div class="property-grid">
+<!-- Property Grid -->
+<div class="property-grid" id="property-grid">
     {% for property in properties %}
-        <div class="property-item" data-image-url="{% if property.image %}{{ property.image.url }}{% else %}{% static 'default_image.png' %}{% endif %}">
+        <div class="property-item" data-id="{{ property.id }}" data-image-url="{% if property.image %}{{ property.image.url }}{% else %}{% static 'default_image.png' %}{% endif %}">
             {% if property.image %}
-                <img src="{{ property.image.url }}" alt="{{ property.title }}" class="property-thumbnail">
+                <img src="{{ property.image.url }}" alt="{{ property.title }}" class="property-thumbnail" onclick="openImageModal('{{ property.image.url }}', '{{ property.title }}', '{{ property.description }}', '{{ property.price }}', '{{ property.location }}', '{{ property.available }}')">
             {% else %}
-                <img src="{% static 'default_image.png' %}" alt="Default Image" class="property-thumbnail"> <!-- Use a default image -->
+                <img src="{% static 'default_image.png' %}" alt="Default Image" class="property-thumbnail" onclick="openImageModal('{% static 'default_image.png' %}', '{{ property.title }}', '{{ property.description }}', '{{ property.price }}', '{{ property.location }}', '{{ property.available }}')">
             {% endif %}
             <h3>{{ property.title }}</h3>
             <p>Location: {{ property.location }}</p>
@@ -64,8 +65,15 @@
 
 <!-- Fullscreen Image Modal -->
 <div id="fullscreen-modal" class="fullscreen-modal">
-    <span class="close-modal">&times;</span>
+    <span class="close-modal" onclick="closeImageModal()">&times;</span>
     <img class="fullscreen-image" id="fullscreen-image" src="" alt="">
+    <div class="image-details" id="image-details">
+        <h3 id="image-title"></h3>
+        <p id="image-description"></p>
+        <p><strong>Price:</strong> $<span id="image-price"></span></p>
+        <p><strong>Location:</strong> <span id="image-location"></span></p>
+        <p><strong>Status:</strong> <span id="image-status"></span></p>
+    </div>
 </div>
 
 {% endblock %}

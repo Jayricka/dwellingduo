@@ -6,9 +6,40 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Homepage and About Page Background */
+.page-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden; /* Prevents zooming issue */
+}
+
+/* Overlay for better text visibility */
+.page-background .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+    z-index: 1;
+}
+
+/* About Page Text Styling */
+.about-text {
+    position: relative;
+    z-index: 2; /* Ensure text appears above overlay */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
 /* Header Styles */
 header {
-    background-color: #333; /* Blue header */
+    background-color: #333;
     color: white;
     padding: 20px;
     text-align: center;
@@ -19,33 +50,207 @@ header h1 {
     font-size: 2.5rem;
 }
 
-header nav {
+/* Filter Form Styles */
+.filter-form {
     display: flex;
-    justify-content: space-between; /* Align left and right sections */
-    align-items: center;
-    background-color: #333;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-input {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-filter {
     padding: 10px 20px;
-}
-
-.navbar-left,
-.navbar-right {
-    display: flex;
-    gap: 15px; /* Spacing between links */
-}
-
-.navbar-left a,
-.navbar-right a {
+    background-color: #007bff;
     color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
 }
 
-.navbar-left a:hover,
-.navbar-right a:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+.btn-filter:hover {
+    background-color: #0056b3;
+}
+
+.sort-select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+}
+
+/* Add Property Button Styles */
+.add-property-form {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.btn-add {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-add:hover {
+    background-color: #218838;
+}
+
+/* Property Grid Flexbox */
+.property-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.property-item {
+    flex: 1 1 calc(33.33% - 20px);
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.property-item:hover {
+    transform: translateY(-5px);
+}
+
+.property-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.property-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 10px;
+}
+
+.property-item p {
+    font-size: 1rem;
+    color: #777;
+    margin: 0 10px 10px 10px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.btn-details, .btn-edit, .btn-delete {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-details {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-details:hover {
+    background-color: #0056b3;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* Owner Actions Styles */
+.owner-actions {
+    margin-top: 10px;
 }
 
 /* Footer Styles */
@@ -56,232 +261,27 @@ footer {
     text-align: center;
 }
 
-/* Cover Section (Home & About) */
-.cover-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
-
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    z-index: 1;
-}
-
-.overlay h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.overlay p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-}
-
-.overlay .cta-button {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    margin: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.overlay .cta-button:hover {
-    background-color: #ff5733; /* Orange on hover */
-}
-
-/* Key Features Section */
-.key-features {
-    padding: 40px;
-    background-color: #fff;
-    text-align: center;
-}
-
-.features-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.feature-item {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.feature-item i {
-    font-size: 2.5rem;
-    color: #007bff;
-    margin-bottom: 15px;
-}
-
-.feature-item p {
-    font-size: 1.2rem;
-    color: #555;
-}
-
-/* Property Grid Using Flexbox */
-.property-grid {
-    display: flex;
-    flex-wrap: wrap; /* Allows wrapping of items within the container */
-    justify-content: space-between; /* Distributes cards with space between */
-    gap: 20px; /* Adds space between cards */
-    padding: 20px;
-    max-width: 1200px; /* Maximum width for the grid */
-    margin: 0 auto; /* Centers the grid */
-    box-sizing: border-box; /* Ensures padding doesn’t affect layout */
-}
-
-.property-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    flex-basis: calc(33.333% - 20px); /* Ensures three cards per row */
-    max-width: 350px; /* Max width for cards */
-    display: flex;
-    flex-direction: column; /* Makes sure the card items stack vertically */
-    transition: transform 0.3s ease;
-}
-
-.property-card:hover {
-    transform: translateY(-5px); /* Hover effect for cards */
-}
-
-.property-card img {
-    width: 100%;
-    height: 200px; /* Set height for property images */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-}
-
-.property-card-content {
-    padding: 20px;
-    text-align: center;
-    flex: 1; /* Ensures content takes available space */
-}
-
-.property-card h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.property-card p {
-    font-size: 1.1rem;
-    color: #777;
-    margin-bottom: 15px;
-}
-
-.property-card .price {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #007bff; /* Blue color for the price */
-}
-
-.property-card .availability {
-    font-size: 1rem;
-    color: #ff5733; /* Orange color for availability status */
-}
-
-.property-card .cta-button {
-    background-color: #007bff; /* Blue button color */
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-    align-self: center; /* Center the button */
-}
-
-.property-card .cta-button:hover {
-    background-color: #ff5733; /* Orange on hover */
-}
-
-/* About Section */
-.about-section {
-    padding: 40px;
-    background-color: #fff;
-    text-align: center;
-}
-
-.about-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.about-section p {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* GitHub and Social Links */
-.social-link {
-    font-size: 1.2rem;
-    color: #007bff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.social-link:hover {
-    color: #ff5733;
-}
-
-/* Media Queries for Smaller Screens */
+/* Responsive Design */
 @media screen and (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    .overlay h1 {
-        font-size: 2.5rem;
-    }
-
-    .overlay p {
-        font-size: 1.2rem;
-    }
-
     .property-grid {
-        flex-direction: column; /* Stack the cards vertically on small screens */
-        align-items: center; /* Center cards */
+        flex-direction: column;
+        align-items: center;
     }
 
-    .property-card {
-        flex-basis: 100%; /* Make cards take full width on small screens */
-        max-width: 90%; /* Allow for some padding on the sides */
+    .property-item {
+        flex-basis: 100%;
     }
 
-    .feature-item {
-        padding: 15px;
+    .filter-form {
+        flex-direction: column;
     }
 
-    .social-link {
-        font-size: 1.1rem;
+    .filter-input, .sort-select, .btn-filter {
+        width: 100%;
     }
 
-    .property-card .cta-button {
-        font-size: 1rem; /* Adjust button font size */
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
     }
 }

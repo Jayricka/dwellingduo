@@ -43,7 +43,7 @@
             <h3>{{ property.title }}</h3>
             <p>Location: {{ property.location }}</p>
             <p>Price: ${{ property.price }}</p>
-            <p>Status: {{ property.available|yesno:"On Rent,Sale" }}</p>
+            <p>Status: {% if property.available == 'on rent' %}On Rent{% else %}For Sale{% endif %}</p>
 
             <a href="{% url 'properties:property_detail' property.pk %}" class="btn-details">View Details</a>
 

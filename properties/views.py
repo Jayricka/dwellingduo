@@ -4,7 +4,7 @@ from .forms import PropertyForm
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 
-#About view
+# About view
 def about(request):
     return render(request, 'about.html')
 
@@ -53,6 +53,7 @@ def property_list(request):
                 'price': property.price,
                 'location': property.location,
                 'available': property.available,
+                'image': property.image.url if property.image else None,
             }
             for property in properties
         ]
@@ -68,10 +69,25 @@ def property_list(request):
         'sort_option': sort_option,
     })
 
-# Property detail
+# Property detail view
 def property_detail(request, pk):
     property_instance = get_object_or_404(Property, pk=pk)
     return render(request, 'properties/property_detail.html', {'property': property_instance})
+
+# New API view for fetching individual property details
+def property_detail_api(request, pk):
+    property_instance = get_object_or_404(Property, pk=pk)
+    data = {
+        'id': property_instance.pk,
+        'title': property_instance.title,
+        'description': property_instance.description,
+        'price': property_instance.price,
+        'location': property_instance.location,
+        'available': property_instance.available,
+        'image': property_instance.image.url if property_instance.image else None,
+        'is_owner': property_instance.owner == request.user if request.user.is_authenticated else False,
+    }
+    return JsonResponse(data)
 
 # Create property
 @login_required

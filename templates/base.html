@@ -9,38 +9,40 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Ensure correct path -->
 </head>
 <body>
-    <header>
-        <h1 class="site-title">
-            <a href="{% url 'home' %}" class="title-dwellingduo">DwellingDuo</a>
-        </h1>
-        <nav class="navbar">
-            <div class="navbar-left">
-                <a href="{% url 'home' %}" class="menu-item">Home</a>
-                <a href="{% url 'about' %}" class="menu-item">About</a>
-            </div>
-            <div class="navbar-center">
-                <a href="{% url 'properties:property_list' %}" class="menu-item">View Properties</a>
-            </div>
-            <div class="navbar-right">
-                {% if user.is_authenticated %}
-                    <a href="{% url 'accounts:logout' %}" class="menu-item">Logout</a>
-                {% else %}
-                    <a href="{% url 'accounts:register' %}" class="menu-item">Register</a>
-                    <a href="{% url 'accounts:login' %}" class="menu-item">Login</a>
-                {% endif %}
-            </div>
-        </nav>
-    </header>
+    <div class="page-wrapper">
+        <header>
+            <h1 class="site-title">
+                <a href="{% url 'home' %}" class="title-dwellingduo">DwellingDuo</a>
+            </h1>
+            <nav class="navbar">
+                <div class="navbar-left">
+                    <a href="{% url 'home' %}" class="menu-item">Home</a>
+                    <a href="{% url 'about' %}" class="menu-item">About</a>
+                </div>
+                <div class="navbar-center">
+                    <a href="{% url 'properties:property_list' %}" class="menu-item">View Properties</a>
+                </div>
+                <div class="navbar-right">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'accounts:logout' %}" class="menu-item">Logout</a>
+                    {% else %}
+                        <a href="{% url 'accounts:register' %}" class="menu-item">Register</a>
+                        <a href="{% url 'accounts:login' %}" class="menu-item">Login</a>
+                    {% endif %}
+                </div>
+            </nav>
+        </header>
 
-    <div class="cover-image"></div> <!-- Background image section -->
+        <div class="cover-image"></div> <!-- Background image section -->
 
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+        <main class="main-content">
+            {% block content %}
+            {% endblock %}
+        </main>
 
-    <footer>
-        <p>&copy; 2024 DwellingDuo. All rights reserved.</p>
-    </footer>
+        <footer>
+            <p>&copy; 2024 DwellingDuo. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
